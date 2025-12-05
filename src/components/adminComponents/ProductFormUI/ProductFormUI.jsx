@@ -1,71 +1,90 @@
+import { Link } from 'react-router-dom';
+import './ProductFormUI.css'
+
 export const ProductFormUI = ({
   product,
-  errors, // trae los errores q pusimos en la carpeta utils> validateProducts.js
+  errors,
   loading,
-  onChange, //onChange, me lo va a mandar el padre para usarlo en los hijos
-  onFileChange, //para cargar imagenes desde la pc
-  onSubmit,
-}) => { //todas estas props van a venir del padre
+  onChange,
+  onFileChange,
+  onSubmit
+}) => {
+  
   return (
-    <section>
-      <form className="product-form" onSubmit={onSubmit}>
-        <h2>Agregar producto</h2>
-        <div>
-          <label>Nombre:</label>
-          <input
-            type="text"
-            name="name"
-            value={product.name}
-            onChange={onChange}
-            required
+  <section>
+    <form className="product-form" onSubmit={onSubmit}>
+      <h2>Agregar producto</h2>
+      <div>
+        <label htmlFor="name">Nombre:</label>
+        <input 
+        type="text"
+        id="name"
+        name="name"
+        value={product.name}
+        onChange={onChange}
+        required />
+        {errors.name && <p className="error">{errors.name}</p>}
+      </div>
+      <div>
+        <label htmlFor="price">Precio:</label>
+        <input 
+        type="number"
+        id="price"
+        name="price"
+        value={product.price}
+        onChange={onChange}
+        min="0"
+        required />
+        {errors.price && <p className="error">{errors.price}</p>}
+      </div>
+      <div>
+        <label htmlFor="category">Categoria:</label>
+        <input 
+        type="text"
+        id="category"
+        name="category"
+        value={product.category}
+        onChange={onChange}
+        placeholder="repuestos/accesorios"
+        required />
+        {errors.category && <p className="error">{errors.category}</p>}
+      </div>
+      <div>
+        <label htmlFor="description">Descripcion:</label>
+        <input 
+        type="text"
+        id="description"
+        name="description"
+        value={product.description}
+        onChange={onChange}
+        required />
+        {errors.description && <p className="error">{errors.description}</p>}
+      </div>
+      <div>
+        <label htmlFor="info">Info:</label>
+        <textarea 
+        name="info" 
+        id="info"
+        value={product.info}
+        onChange={onChange}
+        required
+        ></textarea>
+        {errors.info && <p className="error">{errors.info}</p>}
+      </div>
+      <div>
+        <label htmlFor="image">Imagen:</label>
+        <input 
+          type="file" 
+          id="image" 
+          accept="image/*" 
+          onChange={(e) => onFileChange(e.target.files?.[0] ?? null)}
           />
-          {errors.name && <p className="error">{errors.name}</p>} 
-        </div>
-        <div>
-          <label>Precio:</label>
-          <input
-            type="number"
-            name="price"
-            value={product.price}
-            onChange={onChange}
-            required
-          />
-          {errors.price && <p className="error">{errors.price}</p>}
-        </div>
-        <div>
-          <label>Categoria</label>
-          <input
-            type="text"
-            name="category"
-            value={product.category}
-            onChange={onChange}
-            required
-          />
-          {errors.category && <p className="error">{errors.category}</p>}
-        </div>
-        <div>
-          <label>Descripcion:</label>
-          <textarea
-            name="description"
-            value={product.description}
-            onChange={onChange}
-            required
-          ></textarea>
-          {errors.description && <p className="error">{errors.description}</p>}
-        </div>
-        <div>
-          <label>Imagen:</label>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => onFileChange(e.target.files?.[0] ?? null)}
-          />
-          {errors.file && <p className="error">{errors.file}</p>}
-        </div>
-        <button className="btn" type="submit" disabled={loading}>
-          {loading ? "Guardando..." : "Guardar"}
-        </button>
-      </form>
-    </section>
-  );
+        {errors.file && <p className="error">{errors.file}</p>}
+      </div>
+      <button className="btn" type="submit" disabled={loading}>
+        {loading ? "Guardando..." : "Guardar"}
+      </button>
+    </form>
+    <Link to={"/"}><div className='form-inicio'>👉Volver Home</div></Link>
+  </section>);
 };
