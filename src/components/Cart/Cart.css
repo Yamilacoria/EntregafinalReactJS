@@ -1,0 +1,33 @@
+.item-list-container h2 {
+    width: 100%;
+    text-align: center;
+    margin: 2rem;
+}
+
+.btn-container {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.total-pagar{
+    width: 100%;
+    text-align: center;
+}
+.msg-cart-vacio {
+    font-size: 1.4rem;
+}
+.btn-volver {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.3rem;
+}
+.carrito-container{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}

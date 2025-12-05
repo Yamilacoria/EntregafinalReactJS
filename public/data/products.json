@@ -1,0 +1,21 @@
+[
+  {
+    "id": "1",
+    "name": "Tarta de chocolate",
+    "price": 10000,
+    "category": "dulces",
+    "description": "Tarta con mousse de chocolate suave, bizcohuelo de chocolate amargo y salsa de frutos rojos ",
+    "info": "Se vende por poción o completa",
+    "imageUrl": "/public/images/Tartadechocolate.webp"
+  },
+  {
+    "id": "2",
+    "name": "Torta de chocolate",
+    "price": 30000,
+    "category": "dulces",
+    "description": "Pastel de chocolate decorado con trufas",
+    "info": "Se vende completa",
+    "imageUrl": "/public/images/Pasteldechocolate.webp"
+  }
+  
+]

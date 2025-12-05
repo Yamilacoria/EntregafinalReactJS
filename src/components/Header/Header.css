@@ -1,0 +1,23 @@
+header{
+  background-color: rgb(105, 101, 101);
+  width: 100%;
+}
+
+.header-container{
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .25rem;
+}
+
+.header-container img{
+  margin-left: 10px;
+  cursor: pointer;
+  padding-top: 15px;
+}
+.header-container a {
+  text-decoration: none;
+  color: inherit;
+}

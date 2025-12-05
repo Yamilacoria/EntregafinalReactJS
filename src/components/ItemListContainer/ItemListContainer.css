@@ -1,0 +1,8 @@
+.container-product{
+    margin: 0 auto;
+}
+
+.text-category {
+    color: rgb(211, 170, 35);
+    text-transform: capitalize;
+}

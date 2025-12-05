@@ -1,2 +1,5 @@
-# EntregafinalReactJS
-Entrega final del proyecto de Talento Tech - React JS
+# React + Vite
+
+Proyecto de Talento Tech
+
+
